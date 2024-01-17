@@ -68,6 +68,9 @@ Easy to use GA implementation. With parallel computing and info-prints. Simple a
 
 
 
+For more examples, see:
+- [Regression with RandomForrestRegressor](./example.ipynb)
+- [Knapsack problem](./example_2.ipynb)
 
 
 
