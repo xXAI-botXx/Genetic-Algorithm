@@ -5,32 +5,27 @@ from datetime import datetime as dt
 from joblib import Parallel, delayed
 import enum
 
-class RANDOM(enum.Enum):
+def get_random(*args):
     """
-    INT: randint
-    FLOAT: uniform
-    LIST: choice
-    ELSE: random
+    A helper function to create the get_random_param_value method.
     """
-    INT = "int"
-    FLOAT = "float"
-    LIST = "list"
-    ELSE = "else"
-
-
-def get_random(type, *args):
-    """
-    A helper function to create the get_random_value method.
-    """
-    if type == "int":
-        res = random.randint(args[0], args[1])
-    elif type == "float":
-        res = random.uniform(args[0], args[1])
-    elif type == "list":
-        res = random.choice(args[0])
+    if len(args) == 0:
+        return random.random()
     else:
-        res = random.random()
-    return res
+        if type(args[0]) == int:
+            if len(args) == 1:
+                return random.randint(0, args[0])
+            else:
+                return random.randint(args[0], args[1])
+        elif type(args[0]) == float:
+            if len(args) == 1:
+                return random.uniform(0.0, args[0])
+            else:
+                return random.uniform(args[0], args[1])
+        elif type(args[0]) == list:
+            return random.choice(args[0])
+        else:
+            return random.random()
 
 class GA():
 
@@ -56,7 +51,7 @@ class GA():
     def calculate_fitness(self, kwargs, params):
         pass
 
-    def get_random_value(self, param_key):
+    def get_random_param_value(self, param_key):
         pass
 
     def init_population(self, population_size):
@@ -64,7 +59,7 @@ class GA():
         for _ in range(population_size):
             params = dict()
             for param in self.params:
-                params[param] = self.get_random_value(param)
+                params[param] = self.get_random_param_value(param)
 
             new_population += [[params, float('-inf')]]
         return new_population
@@ -116,7 +111,7 @@ class GA():
             if random.random() <= mutation_rate:
                 for param in self.params:
                     if random.random() > 0.5:
-                        population[random_individual_idx][0][param] = self.get_random_value(param)
+                        population[random_individual_idx][0][param] = self.get_random_param_value(param)
 
                 population[random_individual_idx][1] = float('-inf')
             
@@ -126,7 +121,7 @@ class GA():
         population = copy.deepcopy(population)
         needed_individuals = int(population_size - len(population))
         if needed_individuals > 0:
-            new_individuals = init_population(needed_individuals)
+            new_individuals = self.init_population(needed_individuals)
             population += new_individuals
         return population
 
@@ -182,7 +177,7 @@ class GA():
 
                     # update results
                 for idx, (individual, fitness) in results:
-                    population[idx][0] = individual[0]    # just for savety, should be fine
+                    population[idx][0] = individual    # just for savety, should be fine
                     population[idx][1] = fitness
                     if fitness > best_fitness:
                         best_fitness = fitness
