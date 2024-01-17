@@ -3,6 +3,34 @@ import random
 import copy
 from datetime import datetime as dt
 from joblib import Parallel, delayed
+import enum
+
+class RANDOM(enum.Enum):
+    """
+    INT: randint
+    FLOAT: uniform
+    LIST: choice
+    ELSE: random
+    """
+    INT = "int"
+    FLOAT = "float"
+    LIST = "list"
+    ELSE = "else"
+
+
+def get_random(type, *args):
+    """
+    A helper function to create the get_random_value method.
+    """
+    if type == "int":
+        res = random.randint(args[0], args[1])
+    elif type == "float":
+        res = random.uniform(args[0], args[1])
+    elif type == "list":
+        res = random.choice(args[0])
+    else:
+        res = random.random()
+    return res
 
 class GA():
 
