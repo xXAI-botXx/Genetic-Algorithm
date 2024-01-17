@@ -14,16 +14,23 @@ Easy to use GA implementation. With parallel computing and info-prints. Simple a
 
 ### Usage
 
-1. Download the project
-
-2. Import the class and helper function
-
-   ``````python
+1. Download the project and add to python module search path
+    ``````python
    import sys
    sys.path.insert(0, '../path_to_GA_py_dir')
    # ./ => this folder
    # ../ => supfolder
-   
+   ``````
+
+1. Or pip install it (easier)
+
+    ``````python
+    pip install Simple-Genetic-Algorithm
+    ``````
+
+2. Import the class and helper function
+
+   ``````python
    from genetic_algorithm import GA, get_random
    ``````
 

@@ -4,3 +4,18 @@
 4. run "twine upload dist/* -u __token__ -p *authentification code"
 
 
+
+
+1. Delete all files in the dist folder.
+    
+2. Update the version number in the setup.py file.
+
+3. Re-create the wheels:
+    python3 setup.py sdist
+
+4. Re-upload the new files:
+    twine upload dist/* -u __token__ -p *authentification code
+
+
+
+

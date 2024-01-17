@@ -1,11 +1,17 @@
-from distutils.core import setup
+from setuptools import setup
+
+with open("./README.md", "r") as f:
+    readme = f.read()
+readme = readme.replace('src="./logo.jpeg"', 'src="https://github.com/xXAI-botXx/Genetic-Algorithm/raw/v_01/logo.jpeg"')
 
 setup(
   name = 'Simple_Genetic_Algorithm',         # How you named your package folder (MyLib)
   packages = ['Simple_Genetic_Algorithm'],   # Chose the same as "name"
-  version = '0.1',      # Start with a small number and increase it with every change you make
+  version = '0.1.7',      # Start with a small number and increase it with every change you make
   license='MPL-2.0',        # Chose a license from here: https://help.github.com/articles/licensing-a-repository
   description = 'Genetic Algorithm Framework',   # Give a short description about your library
+  long_description = readme,
+  long_description_content_type='text/markdown',
   author = 'Tobia Ippolito',                   # Type in your name
   url = 'https://github.com/xXAI-botXx/Genetic-Algorithm',   # Provide either the link to your github or to your website
   download_url = 'https://github.com/xXAI-botXx/Genetic-Algorithm/archive/v_01.tar.gz',    

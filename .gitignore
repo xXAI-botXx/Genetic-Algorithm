@@ -1,0 +1,3 @@
+*.gz
+/Simple_Genetic_Algorithm.egg/*
+Simple_Genetic_Algorithm.egg-info/PKG-INFO
