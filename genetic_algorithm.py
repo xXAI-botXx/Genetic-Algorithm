@@ -29,7 +29,7 @@ def get_random(*args):
 
 class GA():
 
-    def __init__(self, generations, population_size, mutation_rate, list_of_params, parallel=True, should_print=True):
+    def __init__(self, generations, population_size, mutation_rate, list_of_params, initial_solutions=list(), parallel=True, should_print=True):
         self.params = list_of_params
         self.should_print = should_print
         self.log = ""
@@ -37,6 +37,10 @@ class GA():
         self.mutation_rate = mutation_rate
         self.generations = generations
         self.parallel = parallel
+        self.initial_solutions = initial_solutions
+
+    def add_initial_solution(self, solution:dict):
+        self.initial_solutions += [[solution, float('-inf')]]
 
     def get_short_duration_representation(self, start, end):
         duration = abs((start-end).total_seconds())
@@ -46,9 +50,11 @@ class GA():
         res = f"{int(days)}D {int(hours)}H {int(minutes)}M {int(seconds)}S"
         return res
 
+    # overwrite me
     def calculate_fitness(self, kwargs, params):
         pass
 
+    # overwrite me
     def get_random_param_value(self, param_key):
         pass
 
@@ -145,7 +151,7 @@ class GA():
         if self.should_print:
             print(start_str)
         self.log += start_str
-        population = []
+        population = self.initial_solutions
 
         for generation in range(generations):
             start_generation = dt.now()
@@ -156,11 +162,13 @@ class GA():
 
             # generate random population with hyperparamters
             if generation == 0:
-                new_pop_str = f"    -> init new population... ({dt.now().strftime('%Y-%m-%d %H:%M OClock')})"
+                new_population_size = population_size - len(population)
+                new_pop_str = f"    -> init {new_population_size} new population... ({dt.now().strftime('%Y-%m-%d %H:%M OClock')})"
+                new_pop_str += f"\n            = Uses {len(population)} predefined solutions!"
                 if self.should_print:
                     print(new_pop_str)
                 self.log += f"\n{new_pop_str}"
-                population = self.init_population(population_size)
+                population += self.init_population(new_population_size)
 
             # calculate the fitness of the population
             if self.parallel:
