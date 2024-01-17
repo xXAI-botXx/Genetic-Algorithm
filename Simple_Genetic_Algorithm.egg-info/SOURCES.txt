@@ -1,0 +1,11 @@
+License.txt
+README.md
+setup.cfg
+setup.py
+Simple_Genetic_Algorithm/__init__.py
+Simple_Genetic_Algorithm/genetic_algorithm.py
+Simple_Genetic_Algorithm.egg-info/PKG-INFO
+Simple_Genetic_Algorithm.egg-info/SOURCES.txt
+Simple_Genetic_Algorithm.egg-info/dependency_links.txt
+Simple_Genetic_Algorithm.egg-info/requires.txt
+Simple_Genetic_Algorithm.egg-info/top_level.txt

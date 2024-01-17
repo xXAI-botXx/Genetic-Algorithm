@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: Simple_Genetic_Algorithm
+Version: 0.1
+Summary: Genetic Algorithm Framework
+Home-page: https://github.com/xXAI-botXx/Genetic-Algorithm
+Download-URL: https://github.com/xXAI-botXx/Genetic-Algorithm/archive/v_01.tar.gz
+Author: Tobia Ippolito
+License: MPL-2.0
+Keywords: Optimization,Genetic-Algorithm,Hyperparameter-Tuning
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MPL-2.0
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+License-File: License.txt
+Requires-Dist: joblib

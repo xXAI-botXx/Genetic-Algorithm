@@ -1,0 +1,6 @@
+1. Change version in setup.py
+2. Create a release on GitHub
+3. run "python setup.py sdist" command
+4. Load to PyPI with GitHub
+
+
