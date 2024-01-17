@@ -44,8 +44,6 @@ class GA():
         hours, minutes = divmod(minutes, 60)
         days, hours = divmod(hours, 24)
         res = f"{int(days)}D {int(hours)}H {int(minutes)}M {int(seconds)}S"
-        if self.should_print:
-            print(res)
         return res
 
     def calculate_fitness(self, kwargs, params):
