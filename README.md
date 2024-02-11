@@ -14,27 +14,30 @@ Easy to use GA implementation. With parallel computing and info-prints. Simple a
 
 ### Usage
 
-1. Download the project and add to python module search path
-    ``````python
-   import sys
-   sys.path.insert(0, '../path_to_GA_py_dir')
-   # ./ => this folder
-   # ../ => supfolder
-   ``````
+1. Get the code
 
-1. Or pip install it (easier)
+   - Download the project and add to python module search path in your code
+   
+       ``````python
+       import sys
+       sys.path.insert(0, '../path_to_GA_py_dir')
+       # ./ => this folder
+       # ../ => supfolder
+       ``````
 
-    ``````python
-    pip install Simple-Genetic-Algorithm
-    ``````
+    - **Or** pip install it (easier)
 
-2. Import the class and helper function
+        ``````python
+        pip install Simple-Genetic-Algorithm
+        ``````
+
+3. Import the class and helper function
 
    ``````python
    from genetic_algorithm import GA, get_random
    ``````
 
-3. Create 2 functions and parameters
+4. Create 2 functions and parameters
 
    ``````python
    class Example_GA(GA):
@@ -66,7 +69,7 @@ Easy to use GA implementation. With parallel computing and info-prints. Simple a
    parameters = ["n_estimators", "criterion", "max_depth", "max_features", "bootstrap"]
    ``````
 
-4. Create and run genetic algorithm and pass the input, which will be used in the calculate_fitness function
+5. Create and run genetic algorithm and pass the input, which will be used in the calculate_fitness function (in kwargs variable)
 
    ``````python
    optimizer = Example_GA(generations=10, population_size=15, mutation_rate=0.3, list_of_params=parameters)
@@ -75,7 +78,12 @@ Easy to use GA implementation. With parallel computing and info-prints. Simple a
 
 
 
+Short explanation:<br>The **kwargs** are the inputs of optimize-method. These are the values which are needed to calculate the fitness. Maybe you can calculate the fitness without them, depending on what you are optimizing.<br>The **list of parameters** are the gene/the solution, so the parameters which are changed and optimized.<br>The **get_random_value** method return a random value for a given parameter, so that the solutions can be initialized and mutated.
+
+
+
 For more examples, see:
+
 - [Regression with RandomForrestRegressor](./example.ipynb)
 - [Knapsack problem](./example_2.ipynb)
 

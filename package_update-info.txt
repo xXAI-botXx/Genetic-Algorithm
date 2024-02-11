@@ -1,19 +1,13 @@
-1. Change version in setup.py
-2. Create a release on GitHub
-3. run "python setup.py sdist" command
-4. run "twine upload dist/* -u __token__ -p *authentification code"
-
-
-
-
 1. Delete all files in the dist folder.
     
 2. Update the version number in the setup.py file.
 
-3. Re-create the wheels:
+3. Create a release on GitHub
+
+4. Re-create the wheels:
     python3 setup.py sdist
 
-4. Re-upload the new files:
+5. Re-upload the new files:
     twine upload dist/* -u __token__ -p *authentification code
 
 
