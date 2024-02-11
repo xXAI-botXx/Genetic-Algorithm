@@ -1,3 +1,5 @@
 *.gz
 /Simple_Genetic_Algorithm.egg/*
 Simple_Genetic_Algorithm.egg-info/PKG-INFO
+/Simple_Genetic_Algorithm.egg-info/*
+*/__pycache__/*
