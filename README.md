@@ -83,16 +83,20 @@ Short explanation:<br>The **kwargs** are the inputs of optimize-method. These ar
 
 
 ### Examples
+- <a href="./example.ipynb">Regression with RandomForrestRegressor</a>
+- <a href="./example_2.ipynb">Knapsack problem</a>
 
+<!--
 <div style="border: 1px solid black; padding: 10px;">
     <iframe src="example.html" style="width:100%; height:400px;"></iframe>
-</div>
+</div> 
+-->
 
+<!--
 <div style="border: 1px solid black; padding: 10px;">
-    <!-- Inhalt von HTML-Datei 2 einfügen -->
     <iframe src="example_2.html" style="width:100%; height:400px;"></iframe>
 </div>
-
+-->
 
 ### License
 
