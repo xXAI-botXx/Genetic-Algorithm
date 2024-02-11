@@ -25,19 +25,19 @@ Easy to use GA implementation. With parallel computing and info-prints. Simple a
        # ../ => supfolder
        ``````
 
-    - **Or** pip install it (easier)
+    - **Or** [pip install](https://pypi.org/project/Simple-Genetic-Algorithm/) it (easier)
 
         ``````python
         pip install Simple-Genetic-Algorithm
         ``````
 
-3. Import the class and helper function
+2. Import the class and helper function
 
    ``````python
    from genetic_algorithm import GA, get_random
    ``````
 
-4. Create 2 functions and parameters
+3. Create 2 functions and parameters
 
    ``````python
    class Example_GA(GA):
@@ -69,11 +69,11 @@ Easy to use GA implementation. With parallel computing and info-prints. Simple a
    parameters = ["n_estimators", "criterion", "max_depth", "max_features", "bootstrap"]
    ``````
 
-5. Create and run genetic algorithm and pass the input, which will be used in the calculate_fitness function (in kwargs variable)
+4. Create and run genetic algorithm and pass the input, which will be used in the calculate_fitness function (in kwargs variable)
 
    ``````python
    optimizer = Example_GA(generations=10, population_size=15, mutation_rate=0.3, list_of_params=parameters)
-   optimizer.optimize(X_train=X_train, y_train=y_train, X_test=X_dev, y_test=y_dev)
+   best_params, best_fitness, log_str = optimizer.optimize(X_train=X_train, y_train=y_train, X_test=X_dev, y_test=y_dev)
    ``````
 
 
