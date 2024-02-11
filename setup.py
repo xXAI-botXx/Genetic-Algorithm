@@ -1,13 +1,17 @@
 from setuptools import setup
 
+# relative links to absolute
 with open("./README.md", "r") as f:
     readme = f.read()
-readme = readme.replace('src="./logo.jpeg"', 'src="https://github.com/xXAI-botXx/Genetic-Algorithm/raw/v_01/logo.jpeg"')
+readme = readme.replace('src="./logo.jpeg"', 'src="https://github.com/xXAI-botXx/Genetic-Algorithm/raw/v_015/logo.jpeg"')
+readme = readme.replace('src="example.html"', 'src="https://github.com/xXAI-botXx/Genetic-Algorithm/raw/v_015/example.html"')
+readme = readme.replace('src="example_2.html"', 'src="https://github.com/xXAI-botXx/Genetic-Algorithm/raw/v_015/example_2.html"')
+
 
 setup(
   name = 'Simple_Genetic_Algorithm',         # How you named your package folder (MyLib)
   packages = ['Simple_Genetic_Algorithm'],   # Chose the same as "name"
-  version = '0.1.7',      # Start with a small number and increase it with every change you make
+  version = '0.1.8',      # Start with a small number and increase it with every change you make
   license='MPL-2.0',        # Chose a license from here: https://help.github.com/articles/licensing-a-repository
   description = 'Genetic Algorithm Framework',   # Give a short description about your library
   long_description = readme,

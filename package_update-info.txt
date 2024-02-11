@@ -2,7 +2,7 @@
     
 2. Update the version number in the setup.py file.
 
-3. Create a release on GitHub
+3. Create a release on GitHub (optional) + update 'download_url' in setup.py
 
 4. Re-create the wheels:
     python3 setup.py sdist
