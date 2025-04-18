@@ -1,6 +1,6 @@
-Metadata-Version: 2.1
-Name: Simple-Genetic-Algorithm
-Version: 0.1.9.5
+Metadata-Version: 2.4
+Name: Simple_Genetic_Algorithm
+Version: 0.2.0.1
 Summary: Genetic Algorithm Framework
 Home-page: https://github.com/xXAI-botXx/Genetic-Algorithm
 Download-URL: https://github.com/xXAI-botXx/Genetic-Algorithm/archive/v_01.tar.gz
@@ -19,6 +19,17 @@ Classifier: Programming Language :: Python :: 3.12
 Description-Content-Type: text/markdown
 License-File: License.txt
 Requires-Dist: joblib
+Dynamic: author
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: download-url
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: summary
 
 # Genetic-Algorithm
 
@@ -47,19 +58,19 @@ Easy to use GA implementation. With parallel computing and info-prints. Simple a
        # ../ => supfolder
        ``````
 
-    - **Or** pip install it (easier)
+    - **Or** [pip install](https://pypi.org/project/Simple-Genetic-Algorithm/) it (easier)
 
         ``````python
         pip install Simple-Genetic-Algorithm
         ``````
 
-3. Import the class and helper function
+2. Import the class and helper function
 
    ``````python
    from genetic_algorithm import GA, get_random
    ``````
 
-4. Create 2 functions and parameters
+3. Create 2 functions and parameters
 
    ``````python
    class Example_GA(GA):
@@ -91,11 +102,11 @@ Easy to use GA implementation. With parallel computing and info-prints. Simple a
    parameters = ["n_estimators", "criterion", "max_depth", "max_features", "bootstrap"]
    ``````
 
-5. Create and run genetic algorithm and pass the input, which will be used in the calculate_fitness function (in kwargs variable)
+4. Create and run genetic algorithm and pass the input, which will be used in the calculate_fitness function (in kwargs variable)
 
    ``````python
    optimizer = Example_GA(generations=10, population_size=15, mutation_rate=0.3, list_of_params=parameters)
-   optimizer.optimize(X_train=X_train, y_train=y_train, X_test=X_dev, y_test=y_dev)
+   best_params, best_fitness, log_str = optimizer.optimize(X_train=X_train, y_train=y_train, X_test=X_dev, y_test=y_dev)
    ``````
 
 
